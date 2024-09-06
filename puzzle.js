@@ -5,10 +5,10 @@ var currTile;   //switch
 var otherTile;
 
 var turns = 0;
-//var imgOrder=["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var correctOrder=["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 
-var imgOrder=["4", "2", "8","3", "5","1","9", "6", "7"]
+var imgOrder=["1", "2", "3", "4", "5", "6", "7", "9", "8"];
 
 
 window.onload= function(){  //image like 0-2 line-col
@@ -29,7 +29,7 @@ window.onload= function(){  //image like 0-2 line-col
             tile.addEventListener("dragend",dragEnd);  //swap
              
 
-
+            
             document.getElementById("board").append(tile);
 
         }
@@ -100,6 +100,17 @@ function dragEnd()
 
     turns +=1;
     document.getElementById("turns").innerHTML =+ turns;
- }
+    checkOrder(); // verifică ordinea după mutare
+}
+}
 
+function checkOrder() {
+let tiles = document.querySelectorAll("#board img");
+let currentOrder = Array.from(tiles).map(tile => tile.src.split("/").pop().replace(".png", ""));
+
+let isCorrect = correctOrder.every((val, index) => val === currentOrder[index]);
+
+if (isCorrect) {
+    alert("Congratulations, you solved the puzzle! You earned 5 points and saved these polar bears! Polar bears are one of the species most affected by global warming. They depend on sea ice to hunt seals, their primary food source. As the ice melts due to rising temperatures, polar bears are forced to travel greater distances to find food, leading to malnutrition and declining populations. Without urgent action to reduce greenhouse gas emissions and protect their habitat, polar bears may face a severe risk of extinction.");
+}
 }
