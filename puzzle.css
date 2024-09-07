@@ -9,21 +9,37 @@ body{
     width: 400px;
 }
 
-#board{
+#board {
     width: 360px;
     height: 360px;
     background-color: lightblue;
     border: 10px solid #0c67ae;
-
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-
-    
 }
 
 #board img {
     width: 118px;
     height: 118px;
     border: 1px solid #0c67ae;
+}
+
+#board.level-2 {
+    width: 480px;
+    height: 480px;
+}
+
+#board.level-2 img {
+    width: 116px;
+    height: 116px;
+}
+
+
+
+#notification{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
 }
