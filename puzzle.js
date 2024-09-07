@@ -12,7 +12,11 @@ var correctOrder = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var imgOrder = ["1", "2", "3", "4", "5", "6", "7", "9", "8"];
 
 var correctOrder2 = [ "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25","9"];
-var imgOrder2 = ["16", "14", "15","17", "18", "19", "20", "21", "22", "23", "24", "25","9", "11", "12", "13"];
+var imgOrder2 =[ "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24","9", "25"];
+
+var correctOrder3 = [ "31", "32", "33", "34", "35", "36", "37","39", "40", "41", "42", "43", "44", "9","46"];
+var imgOrder3 =[  "31", "32", "33", "34", "35", "36", "37","39", "40", "41", "42", "43", "9","44","45","46"];
+
 
 window.onload = function() {
     initializeBoard(rows, columns, imgOrder);
@@ -110,9 +114,23 @@ function checkOrder() {
 
             document.getElementById("board").classList.add("level-2");
             initializeBoard(rows, columns, imgOrder);
-        } else {
+        
             alert("Congratulations, you solved the puzzle! You earned 5 points and save again our planet! Airborne pollutants, especially those emitted from vehicles and industrial processes, significantly harm the environment. These emissions contribute to the accumulation of greenhouse gases like carbon dioxide and methane in the atmosphere, leading to global warming. As the Earth's temperature rises, we experience more extreme weather events, such as intense heatwaves, storms, and floods. This climate change disrupts ecosystems, endangers wildlife, and poses serious threats to human health and livelihoods. Reducing emissions is crucial to mitigating these harmful effects and protecting our planet's future.");
         }
+
+        if (rows === 4 && columns === 4 && turns >0) {
+            // Trecere la nivelul 2 (4x4)
+            rows = 4;
+            columns = 4;
+            turns = 0;
+            imgOrder = imgOrder3.slice();
+            correctOrder = correctOrder3;
+
+            document.getElementById("board").classList.add("level-3");
+            initializeBoard(rows, columns, imgOrder);
         
+            alert("Congratulations, you solved the puzzle! You earned 5 points and save again our planet!  Phytoplankton are tiny, plant-like organisms that live in the ocean. They are so small that you can't see them without a microscope, but they are incredibly important! Phytoplankton float near the surface of the water and use sunlight to make their own food, just like plants on land. This process is called photosynthesis.They are a vital part of the ocean food chain because many sea creatures, like small fish and whales, eat them. Phytoplankton also produce a lot of the oxygen we breathe. So even though they are tiny, they play a big role in keeping our planet healthy!");
+        }
+
     }
 }
