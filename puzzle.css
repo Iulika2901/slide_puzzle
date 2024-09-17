@@ -1,13 +1,30 @@
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif, Helvetica, sans-serif;
     text-align: center;
-    color: #0c67ae;
+    color: #052e4d;
+    outline-color: rgb(144, 157, 200);
+    background-image: url("wall.jpg");
+    background-size: cover;
 }
 
-#title{
-    height: 250px;
-    width: 400px;
+h1{
+ outline-color: rgb(84, 94, 124);
+ text-align: center;
+ font: Georgia !important;
+ font-size: 100px;
+
+
 }
+
+h2{
+    color:blanchedalmond;
+    text-align: center;
+    font: Georgia !important;
+    font-size: 40px;
+
+   
+   }
+   
 
 #board {
     width: 360px;
@@ -31,11 +48,19 @@ body{
 }
 
 #board.level-2 img {
-    width: 116px;
-    height: 116px;
+    width: 118px;
+    height: 118px;
 }
 
+#board.level-3 {
+    width: 480px;
+    height: 480px;
+}
 
+#board.level-3 img{
+    width: 118px;
+    height: 118px;
+}
 
 #notification{
     margin: 0;
@@ -43,3 +68,4 @@ body{
     box-sizing: border-box;
     font-family: 'poppins', sans-serif;
 }
+
